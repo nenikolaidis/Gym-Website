@@ -1,0 +1,53 @@
+/*style for update news, page, service*/
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h2.logo{
+    color: #fff !important;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.select_option {
+    display: flex;
+    gap: 10px;
+}

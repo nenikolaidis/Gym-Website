@@ -1,0 +1,107 @@
+CREATE TABLE pending_users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    surname VARCHAR(30) NOT NULL,
+    country VARCHAR(30) NOT NULL,
+    state VARCHAR(30) NOT NULL,
+    city VARCHAR(30) NOT NULL,
+    address VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    pass_word VARCHAR(80) NOT NULL
+);
+
+==================================================================================
+
+CREATE TABLE accepted_users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    surname VARCHAR(30) NOT NULL,
+    country VARCHAR(30) NOT NULL,
+    state VARCHAR(30) NOT NULL,
+    city VARCHAR(30) NOT NULL,
+    address VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    pass_word VARCHAR(80) NOT NULL,
+    roles VARCHAR(80) NOT NULL,
+    cancelled_at TIMESTAMP ,
+    cancelation_count INT NOT NULL DEFAULT 0
+);
+
+INSERT INTO accepted_users (name, surname, country, state, city, address, email, username, pass_word, roles, cancelled_at , cancelation_count)
+VALUES ('Admin', 'Admin', 'Greece', 'Athens', 'Athens', '123 Main St', 'admin@example.com', 'admin', 'admin', 'Admin', '0000-00-00 00:00:00', 0),
+('Nearchos', 'Nikolaidis', 'Greece', 'Athens', 'Athens', '123 Main St', 'ne.nikoalidis@example.com', 'nearchos', '123456', 'User', '0000-00-00 00:00:00', 0),
+('Dennis', 'Koutsis', 'Greece', 'Athens', 'Athens', '123 Main St', 'coach@example.com', 'denniskgr', '123456', 'Gymnast', '0000-00-00 00:00:00', 0),
+('Bob', 'Smith', 'USA', 'California', 'Los Angeles', '456 Oak St', 'bob.smith@example.com', 'bobsmith', 'password123', 'Gymnast', '0000-00-00 00:00:00', 0),
+('Alice', 'Johnson', 'USA', 'New York', 'New York City', '789 Elm St', 'alice.johnson@example.com', 'alicejohnson', 'password456', 'Gymnast', '0000-00-00 00:00:00', 0),
+('Jason', 'Iatrou', 'USA', 'Texas', 'Houston', '101 Pine St', 'jason.iatrou@example.com', 'jason', 'password789', 'Gymnast', '0000-00-00 00:00:00', 0);
+;
+
+==================================================================================
+
+CREATE TABLE announcements (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    Date DATE NOT NULL,
+    Content VARCHAR(500) NOT NULL,
+    Type ENUM('Announcement', 'Offer') NOT NULL
+);
+
+INSERT INTO announcements (Title, Date, Content, Type) VALUES
+('Important Update', '2024-01-17', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.', 'Announcement'),
+('Flash Sale', '2024-02-01', 'Don''t miss our exclusive one-day-only flash sale with amazing discounts!', 'Offer'),
+('New Feature Launch', '2024-03-10', 'We are excited to announce the launch of our latest feature. Check it out now!', 'Announcement'),
+('Limited Time Offer', '2024-04-05', 'Grab the opportunity to avail of our limited-time special discount. Hurry!', 'Offer'),
+('System Maintenance', '2024-05-20', 'Scheduled system maintenance on Saturday. Please be advised.', 'Announcement');
+
+==================================================================================
+
+CREATE TABLE servicetypes (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Type VARCHAR(30) NOT NULL
+);
+
+INSERT INTO servicetypes (Type) VALUES
+('Basic Gym'),
+('Yoga Classes'),
+('Pilates Classes'),
+('Swimming Pool'),
+('Personal Training Sessions'),
+('Kick Boxing'),
+('Zumba');
+
+==================================================================================
+
+CREATE TABLE GymServices (
+    ServiceID INT PRIMARY KEY AUTO_INCREMENT,
+    Service VARCHAR(255) NOT NULL,
+    Gymnast VARCHAR(255) NOT NULL,
+    Date DATE NOT NULL,
+    Time TIME NOT NULL,
+    AvailableSlots INT NOT NULL
+);
+
+INSERT INTO GymServices (Service, Gymnast, Date, Time, AvailableSlots) VALUES
+('Basic Gym', 'Bob', '2024-03-05', '08:00:00', 35),
+('Yoga Classes', 'Alice', '2024-03-08', '10:30:00', 15),
+('Pilates Classes', 'Dennis', '2024-03-07', '13:00:00', 15),
+('Swimming Pool', 'Dennis', '2024-03-11', '11:30:00', 30),
+('Personal Training Sessions', 'Bob', '2024-03-08', '08:00:00', 1),
+('Personal Training Sessions', 'Alice', '2024-03-10', '14:00:00', 1),
+('Kick Boxing', 'Jason', '2024-03-09', '20:00:00', 10),
+('Zumba', 'Jason', '2024-03-08', '11:00:00', 20);
+
+==================================================================================
+
+CREATE TABLE GymBookings (
+    BookingID INT PRIMARY KEY AUTO_INCREMENT,
+    ServiceID INT NOT NULL,
+    Service VARCHAR(255) NOT NULL,
+    Gymnast VARCHAR(255) NOT NULL,
+    Username VARCHAR(30) NOT NULL,
+    Name VARCHAR(255) NOT NULL,
+    Surname VARCHAR(255) NOT NULL,
+    BookingDate DATE NOT NULL,
+    BookingTime TIME NOT NULL
+);
