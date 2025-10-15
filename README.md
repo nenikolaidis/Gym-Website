@@ -6,7 +6,7 @@ A web-based Gym Management System built using PHP, HTML, CSS, and JavaScript. Th
 
 ## Project Structure
 
-`css/`
+### `css/`
 
 Contains all the stylesheet files used for different sections of the website:
 
@@ -26,15 +26,15 @@ Contains all the stylesheet files used for different sections of the website:
 
  - `update.css` – Styles for update forms and pages.
 
-`images/`
+### `images/`
 
 Directory for storing all images used in the website, including logos, banners, and content images.
 
-`php-html/`
+### `php-html/`
 
 Contains all the PHP and HTML files, organized into subdirectories:
 
-`admin/`
+### `admin/`
 
 Files for administrative functionality:
 
@@ -56,7 +56,7 @@ Files for administrative functionality:
 
  - `usersmanagement.php` – Admin user management interface.
 
-`classes/`
+### `classes/`
 
 Contains PHP classes for handling backend logic:
 
@@ -66,7 +66,7 @@ Contains PHP classes for handling backend logic:
 
  - `signup.classes.php` – Class for handling user registration.
 
-`includes/`
+### `includes/`
 
 Reusable PHP scripts for backend operations:
 
@@ -76,7 +76,7 @@ Reusable PHP scripts for backend operations:
 
  - `signup.inc.php` – Script to process user registration.
 
-`main/`
+### `main/`
 
 Core website files:
 
@@ -88,7 +88,7 @@ Core website files:
 
  - `success.php` – Page displayed on successful operations.
 
-`user/`
+### `user/`
 
 Files for user-specific functionality:
 
@@ -100,7 +100,7 @@ Files for user-specific functionality:
 
  - `userservices.php` – Page for users to view available services.
 
-`txt/`
+### `txt/`
 
  - `arrays.txt` – Text file to have a clear view for all the arrays used.
 
